@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+import time
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
@@ -10,5 +11,5 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         product_name_from_added_message = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_ADDED_MESSAGE).text
         product_price_from_added_message = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_ADDED_MESSAGE).text
-        assert product_name_at_numbar in product_name_from_added_message, f"Product name from message:{product_name_from_added_message} must contain product name:{product_name_at_numbar}"
+        assert product_name_at_numbar == product_name_from_added_message, f"Product name from message:{product_name_from_added_message} must contain product name:{product_name_at_numbar}"
         assert product_price in product_price_from_added_message, f"Product price from message:{product_name_from_added_message} must contain product name:{product_name_at_numbar}"
