@@ -13,3 +13,4 @@ class ProductPageLocators():
     PRODUCT_NAME_ADDED_MESSAGE = (By.XPATH, "//div[@id='messages']/div[1]//strong")
     PRODUCT_PRICE_ADDED_MESSAGE = (By.XPATH, "//div[@id='messages']/div[3]")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main > .price_color ")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success:first-child")
