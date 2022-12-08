@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-import time
+
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
@@ -16,8 +16,8 @@ class ProductPage(BasePage):
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
-        "Success message is presented, but should not be"
+            "Success message is presented, but should not be"
 
     def should_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
-        "Success message is presented, but it should disappear"
+            "Success message is presented, but it should disappear"
