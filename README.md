@@ -7,11 +7,12 @@ Upgrade pip:
 python -m pip install --upgrade pip
 
 Create new virtual environment:
-python -m venv venv
-cd /venv/Scripts
-./Activate.ps1
+python -m venv ..\venv
+cd  ..\venv\Scripts\
+.\Activate.ps1
 
 Install requirements:
+pip install --upgrade pip
 pip install -r requirements.txt
 
 Examples how to run tests:
