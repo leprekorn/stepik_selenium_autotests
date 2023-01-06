@@ -28,4 +28,25 @@ class LoginPage(BasePage):
         ), "Register form is not presented"
 
     def register_new_user(self, email, password):
-        
+        register_email_field = self.browser.find_element(
+            *LoginPageLocators.REGISTRATION_EMAIL
+        )
+        register_email_field.click()
+        register_email_field.send_keys(email)
+        register_password_field = self.browser.find_element(
+            *LoginPageLocators.REGISTRATION_PASSWORD
+        )
+        register_password_field.click()
+        register_password_field.send_keys(password)
+        register_password_confirm_field = self.browser.find_element(
+            *LoginPageLocators.REGISTRATION_PASSWORD_CONFIRM
+        )
+        register_password_confirm_field.click()
+        register_password_confirm_field.send_keys(password)
+        register_button = self.browser.find_element(
+            *LoginPageLocators.REGISTER_BUTTON
+        )
+        register_button.click()
+        assert self.is_element_present(
+            *LoginPageLocators.ALERT_SUCCESS
+        ), "Alert Thanks for registering does not exist, but it should be"
