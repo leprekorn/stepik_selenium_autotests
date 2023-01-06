@@ -8,7 +8,7 @@ class ProductPage(BasePage):
             *ProductPageLocators.ADD_TO_BASKET_BUTTON
         )
         add_to_basket_button.click()
-        if (solve_quiz):
+        if solve_quiz:
             self.solve_quiz_and_get_code()
         product_name_at_numbar = self.browser.find_element(
             *ProductPageLocators.PRODUCT_NAME_AT_NUMBAR
