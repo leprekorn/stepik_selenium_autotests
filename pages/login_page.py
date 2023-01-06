@@ -43,9 +43,7 @@ class LoginPage(BasePage):
         )
         register_password_confirm_field.click()
         register_password_confirm_field.send_keys(password)
-        register_button = self.browser.find_element(
-            *LoginPageLocators.REGISTER_BUTTON
-        )
+        register_button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
         register_button.click()
         assert self.is_element_present(
             *LoginPageLocators.ALERT_SUCCESS
