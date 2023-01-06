@@ -17,3 +17,4 @@ pip install -r requirements.txt
 
 Examples how to run tests:
 pytest -v --tb=line --language=en test_main_page.py
+pytest -s -v --tb=line test_product_page.py
